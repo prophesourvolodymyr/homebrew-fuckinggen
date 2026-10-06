@@ -1,17 +1,19 @@
 class Fuckinggen < Formula
   desc "Generate images through your ChatGPT subscription from the terminal"
   homepage "https://github.com/prophesourvolodymyr/fuckinggen"
-  url "https://github.com/prophesourvolodymyr/fuckinggen/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "615039532add379c587421c26a70d785811c4a5b4ff443252b2610064cbf0185"
+  url "https://github.com/prophesourvolodymyr/fuckinggen/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "76de50dbea004706a869ded134fc604fd7583efbe9a427fd870ac588a67ede72"
   license "WTFPL"
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", "--locked", "--root", prefix, "--path", "."
+    (share/"fgen").install "install.sh"
+    (share/"fgen/skills/gpt-image-gen-latest").install "skills/gpt-image-gen-latest/SKILL.md"
   end
 
   test do
-    assert_match "0.1.0", shell_output("#{bin}/fgen --version")
+    assert_match version.to_s, shell_output("#{bin}/fgen --version")
   end
 end
