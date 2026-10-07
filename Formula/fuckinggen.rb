@@ -1,8 +1,8 @@
 class Fuckinggen < Formula
   desc "Generate images through your ChatGPT subscription from the terminal"
   homepage "https://github.com/prophesourvolodymyr/fuckinggen"
-  url "https://github.com/prophesourvolodymyr/fuckinggen/archive/refs/tags/v0.1.8.tar.gz"
-  sha256 "369c6b1c787270a7ad7c273cfac56d97c407c2607a8c4dc536fa0f1899a2418e"
+  url "https://github.com/prophesourvolodymyr/fuckinggen/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "31ea5ce0d8eefc9862a4440ee6d5a6529a80ab4e4e12de139f7e0db489555046"
   license "WTFPL"
 
   depends_on "rust" => :build
